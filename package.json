@@ -1,6 +1,6 @@
 {
   "name": "@jayyuen1/js-interface",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A tiny library that helps us achieve a certain level of type safety around interfaces (via duck typing).  This library also helps us keep JavaScript objects synchronized with any interface definitions that they explicitly implement.",
   "main": "js_interface.js",
   "scripts": {
