@@ -1,0 +1,39 @@
+{
+  "name": "@jayyuen1/js-interface",
+  "version": "0.0.0",
+  "description": "Keeps JavaScript objects synchronized with any interface definitions that they explicitly implement.",
+  "main": "js_interface.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayyuen1/js-interface.git"
+  },
+  "keywords": [
+    "interface",
+    "interfaces",
+    "trait",
+    "traits",
+    "inheritance",
+    "oop",
+    "synchronization",
+    "enforcement"
+  ],
+  "author": "jayyuen1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jayyuen1/js-interface/issues"
+  },
+  "homepage": "https://github.com/jayyuen1/js-interface#readme",
+  "engines": {
+    "node": ">=4.2.6"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
