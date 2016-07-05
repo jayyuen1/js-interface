@@ -1,6 +1,8 @@
 # js-interface
 
-A tiny library that helps us achieve a certain level of (duck typing) type safety around interfaces.
+A tiny library that helps us
+- achieve a certain level of type safety around interfaces (via duck typing)
+- keeps JavaScript objects synchronized with any interface definitions that they explicitly implement
 
 
 ## Guiding Principle
@@ -10,9 +12,11 @@ When we create an object/prototype with the intention of having it implement a c
 
 ## Definitions
 
-This library considers an "interface" to be a set of function signatures, where each signature consists of the function name and the number of parameters that the function accepts.
+At present, this library considers an "interface" to be a set of function signatures, where each signature consists of the function name and the number of parameters that the function accepts.
 
 An object/prototype is considered to "implement" an interface if the object/prototype contains a matching function for each signature in the interface.
+
+Properties are NOT currently checked (only functions are checked).  In the future, the library may be extended to check for both functions AND properties.
 
 
 ## Installation
@@ -26,7 +30,6 @@ An object/prototype is considered to "implement" an interface if the object/prot
 
 
 ## Usage
-
 
 ### Importing/Requiring the module
 
