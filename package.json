@@ -18,7 +18,11 @@
     "inheritance",
     "oop",
     "synchronization",
-    "enforcement"
+    "enforcement",
+    "duck",
+    "typing",
+    "type",
+    "safety"
   ],
   "author": "jayyuen1",
   "license": "MIT",
