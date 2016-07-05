@@ -93,7 +93,9 @@ Specifically,
 - We create a class that inherits from another class.
 - We implement part of the interface in the superclass, and the remaining part in the subclass
     
-    const util = require('util') // NodeJS 'util' library, which we will use to implement object inheritance
+````javascript
+    const util = require('util') // NodeJS 'util' library, which we will use to
+                                 // implement object inheritance
     
     // FIRST, we create our superclass.
     
@@ -110,12 +112,14 @@ Specifically,
 
     util.inherits(MathSubClass, MathSuperClass)
 
-    MathSubClass.prototype.subtract = function(a, b) { // the other half of our interface
+    MathSubClass.prototype.subtract = function(a, b) { // the other half of
+                                                       // our interface
       return a - b
     }
     
     
-    // FINALLY, we create an instance of our subclass, and check whether it implements our interface definition (and of course it does!)
+    // FINALLY, we create an instance of our subclass, and check whether it
+    // implements our interface definition (and of course it does!)
     const mathObject = new MathSubClass()
     console.log(JSInterface.isImplementedIn(mathObject, MathInterface)) // true
 ````
@@ -135,14 +139,19 @@ Use the '*implementIn*' function to help you do this:
 
     const obj = {}
 
-    console.log(JSInterface.isImplementedIn(obj, MathInterface)) // false, because our object does not yet have the functions needed to implement our interface
+    // The following line returns false, because our object does not yet have
+    // the functions needed to implement our interface
+    console.log(JSInterface.isImplementedIn(obj, MathInterface)) 
+    
 
     JSInterface.implementIn(obj, MathInterface, {
       add: function(x, y) { return x + y },
       subtract: function(a, b) { return a - b }
     })
 
-    console.log(JSInterface.isImplementedIn(obj, MathInterface)) // true, because our object now implements the interface
+    // The following line returns true, because our object now implements
+    // the interface
+    console.log(JSInterface.isImplementedIn(obj, MathInterface)) 
 
 ````
 
@@ -151,8 +160,10 @@ What happens when we attempt to implement an interface with implementation code 
 ````javascript
     const anotherObj = {}
 
-    // The following line throws an exception, because we forgot to supply an implementation for the 'subtract' function.
-    // The exception will contain the error message: "Missing Function: subtract(numOne, numTwo)"
+    // The following line throws an exception, because we forgot to supply an
+    // implementation for the 'subtract' function.
+    // The exception will contain the error message:
+    //                           "Missing Function: subtract(numOne, numTwo)"
     JSInterface.implementIn(anotherObj, MathInterface, {
       add: function(x, y) { return x + y }
     })
@@ -188,8 +199,14 @@ The 'implementIn' function can also be used to implement an interface directly o
     
     var reasons = JSInterface.reasonsNotImplementedIn(someObj, MathInterface)
     
-    console.log(reasons) // "Incorrect number of parameters (3) in implementation for function: add(numOne, numTwo) | Missing Function: subtract(numOne, numTwo)"
+    console.log(reasons) // "Incorrect number of parameters (3) in
+                         // implementation for function: add(numOne, numTwo) 
+                         // | Missing Function: subtract(numOne, numTwo)"
 
-    JSInterface.throwErrIfNotImplementedIn(someObj, MathInterface) // throws an exception that contains the message: "Incorrect number of parameters (3) in implementation for function: add(numOne, numTwo) | Missing Function: subtract(numOne, numTwo)"
+    // The following line throws an exception that contains the message:
+    //   "Incorrect number of parameters (3) in implementation for function:
+    //    add(numOne, numTwo) | Missing Function: subtract(numOne, numTwo)"
+    JSInterface.throwErrIfNotImplementedIn(someObj, MathInterface) 
 
 ````
+
